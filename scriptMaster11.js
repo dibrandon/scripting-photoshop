@@ -1,14 +1,14 @@
 var rutaOrigen = [];
 var rutaDestino = [];
-var rutaCopia = "ruta/de/la/carpeta/de/copia";
+var rutaCopia = "D:/MASTER ADVANCED/A plus B";
 
 //generamos los arreglos de origen y destino con 1000 elementos
-for(var i=1; i<=1000; i++) {
-    var num = ("0000" + i).slice(-4);
-    var rutaOrigen = "C:/MASTER ADVANCED/A/Nueva carpeta/" + num + "-A.psd";
-    var rutaDestino = "C:/MASTER ADVANCED/B/Nueva carpeta/" + num + "-B.psd";
-    origenes.push(rutaOrigen);
-    destinos.push(rutaDestino);
+for(var i=1; i<=10; i++) {
+    var num = ("00000" + i).slice(-4);
+    var origenes = "C:/MASTER ADVANCED/A/Nueva carpeta/" + num + "-A.psd";
+    var destinos = "C:/MASTER ADVANCED/B/Nueva carpeta/" + num + "-B.psd";
+    rutaOrigen.push(origenes);
+    rutaDestino.push(destinos);
 }
 
 //generamos un numero al azar

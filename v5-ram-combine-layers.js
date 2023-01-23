@@ -2,31 +2,38 @@ var rutaOrigen = [];
 var rutaDestino = [];
 var rutaCopia = "D:/MASTER ADVANCED/A plus B";
 var combinaciones = [];
+var contador = 0;
 
 //generamos los arreglos de origen y destino con 10000 elementos
-for(var i=1; i<=1000; i++) {
-var num = ("00000" + i).slice(-5);
+for(var i=1; i<=100; i++) {
+var num = ("0000" + i).slice(-4);
 var origenes = "C:/MASTER ADVANCED/A/" + num + "-A.psd";
 var destinos = "C:/MASTER ADVANCED/B/" + num + "-B.psd";
 rutaOrigen.push(origenes);
 rutaDestino.push(destinos);
 }
-var combinaciones = [];
-var numArchivos = 0;
 
-while (numArchivos < 1000000) {
+
+while(contador < 100) {
     for (var i = 0; i < rutaDestino.length; i++) {
         var numAlAzar = Math.floor(Math.random() * rutaOrigen.length);
         while(numAlAzar === i){
-           numAlAzar = Math.floor(Math.random() * rutaOrigen.length);
+            numAlAzar = Math.floor(Math.random() * rutaOrigen.length);
         }
+        var utilizado = false;
         var combinacion = rutaOrigen[numAlAzar] + "-" + rutaDestino[i];
-        if(combinaciones.indexOf(combinacion) === -1) {
-            combinaciones.push(combinacion);
-            // seleccionamos el archivo de origen al azar y copiamos en destino
+
+        for (var j = 0; j < combinaciones.length; j++){
+            if(combinaciones[j] === combinacion){
+                utilizado = true;
+                break;
+            }
+        }
+        if(!utilizado){
+            //Buscamos al azar y copiamos la capa activa.
             var docOrigen = app.open(File(rutaOrigen[numAlAzar]));
             docOrigen.activeLayer.copy();
-
+            //
             var docDestino = app.open(File(rutaDestino[i]));
             docDestino.paste();
             //generamos trazabilidad
@@ -36,13 +43,17 @@ while (numArchivos < 1000000) {
             //se genera nuevo archivo
             var copia = new File(rutaCopia + "/" + nombreCopia);
             docDestino.saveAs(copia);
-
+            //cerramos conexiones y limpiamos variables
             docDestino.close(SaveOptions.DONOTSAVECHANGES);
             docOrigen.close(SaveOptions.DONOTSAVECHANGES);
-
-            // eliminamos el archivo seleccionado del arreglo
+            docOrigen = null;
+            docDestino = null;
+            combinaciones.push(combinacion);
             rutaOrigen.splice(numAlAzar, 1);
-            numArchivos++;
+            contador++;
+            if(contador === 100){
+                break;
+            }
         }
     }
 }
