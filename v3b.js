@@ -30,9 +30,10 @@ break;
 }
 
 if(!utilizado){
-var docOrigen = app.open(File(rutaOrigen[numAlAzar]));
-docOrigen.activeLayer.copy();
-
+        //Buscamos al azar y copiamos la capa activa.
+        var docOrigen = app.open(File(rutaOrigen[numAlAzar]));
+        docOrigen.activeLayer.copy();
+        //
         var docDestino = app.open(File(rutaDestino[i]));
         docDestino.paste();
         //generamos trazabilidad
