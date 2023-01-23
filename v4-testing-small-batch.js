@@ -5,15 +5,15 @@ var combinaciones = [];
 var contador = 0;
 
 //generamos los arreglos de origen y destino con 10000 elementos
-for(var i=1; i<=1000; i++) {
+for(var i=1; i<=10; i++) {
 var num = ("00000" + i).slice(-4);
 var origenes = "C:/MASTER ADVANCED/A/" + num + "-A.psd";
 var destinos = "C:/MASTER ADVANCED/B/" + num + "-B.psd";
 rutaOrigen.push(origenes);
 rutaDestino.push(destinos);
 }
-
-while(contador < 1000000) {
+// en contador indicar el numero de versiones a obtener
+while(contador < 100) {
 for (var i = 0; i < rutaDestino.length; i++) {
 var numAlAzar = Math.floor(Math.random() * rutaOrigen.length);
 while(numAlAzar === i){
