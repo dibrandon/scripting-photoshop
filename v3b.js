@@ -5,7 +5,7 @@ var combinaciones = [];
 var contador = 0;
 
 //generamos los arreglos de origen y destino con 10000 elementos
-for(var i=1; i<=99; i++) {
+for(var i=1; i<=3; i++) {
 var num = ("0000" + i).slice(-4);
 var origenes = "C:/MASTER ADVANCED/A/" + num + "-A.psd";
 var destinos = "C:/MASTER ADVANCED/B/" + num + "-B.psd";
@@ -16,9 +16,9 @@ rutaDestino.push(destinos);
 while(contador < 200) {
 for (var i = 0; i < rutaDestino.length; i++) {
 var numAlAzar = Math.floor(Math.random() * rutaOrigen.length);
-while(numAlAzar === i){
-numAlAzar = Math.floor(Math.random() * rutaOrigen.length);
-}
+ while(numAlAzar === i){
+ numAlAzar = Math.floor(Math.random() * rutaOrigen.length);
+ }
 var utilizado = false;
 var combinacion = rutaOrigen[numAlAzar] + "-" + rutaDestino[i];
 
