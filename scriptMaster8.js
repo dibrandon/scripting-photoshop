@@ -15,11 +15,14 @@ for(var i=1; i<=10; i++) {
 }
 
 for (var i = 0; i < origenes.length; i++) {
+
     var docOrigen = app.open(File(origenes[i]));
     docOrigen.activeLayer.copy();
+
     var docDestino = app.open(File(destinos[i]));
     docDestino.paste();
     docDestino.save();
+    
     docDestino.close(SaveOptions.SAVECHANGES);
     docOrigen.close(SaveOptions.DONOTSAVECHANGES);
 } 

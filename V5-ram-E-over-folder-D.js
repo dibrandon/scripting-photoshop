@@ -8,22 +8,22 @@ var contador = 0;
 var archivosOrigen = new Folder(rutaOrigen).getFiles();
 var archivosDestino = new Folder(rutaDestino).getFiles();
 
-while(contador < 100) {
+while (contador < 100) {
     for (var i = 0; i < archivosDestino.length; i++) {
         var numAlAzar = Math.floor(Math.random() * archivosOrigen.length);
-        while(archivosOrigen[numAlAzar] === archivosDestino[i]){
+        while (archivosOrigen[numAlAzar] === archivosDestino[i]) {
             numAlAzar = Math.floor(Math.random() * archivosOrigen.length);
         }
         var utilizado = false;
         var combinacion = archivosOrigen[numAlAzar].toString() + "-" + archivosDestino[i].toString();
 
-        for (var j = 0; j < combinaciones.length; j++){
-            if(combinaciones[j] === combinacion){
+        for (var j = 0; j < combinaciones.length; j++) {
+            if (combinaciones[j] === combinacion) {
                 utilizado = true;
                 break;
             }
         }
-        if(!utilizado){
+        if (!utilizado) {
             //Buscamos al azar y copiamos la capa activa.
             var docOrigen = app.open(archivosOrigen[numAlAzar]);
             docOrigen.activeLayer.copy();
@@ -45,9 +45,9 @@ while(contador < 100) {
             combinaciones.push(combinacion);
             archivosOrigen.splice(numAlAzar, 1);
             contador++;
-            if(contador === 100){
-            break;
+            if (contador === 100) {
+                break;
+            }
         }
     }
-}
 }
