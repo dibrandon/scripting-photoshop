@@ -1,14 +1,14 @@
 var rutaOrigen = [];
 var rutaDestino = [];
-var rutaCopia = "D:/MASTER ADVANCED/A plus B";
+var rutaCopia = "D:/MASTER ADVANCED/BEREICHIT-COMBINADOS/RUN 1";
 var combinaciones = [];
 var contador = 0;
 
-//generamos los arreglos de origen y destino con 10000 elementos
-for(var i=1; i<=99; i++) {
+//generamos los arreglos de origen y destino con elementos
+for(var i=1; i<=266; i++) {
 var num = ("0000" + i).slice(-4);
-var origenes = "C:/MASTER ADVANCED/A/" + num + "-A.psd";
-var destinos = "C:/MASTER ADVANCED/B/" + num + "-B.psd";
+var origenes = "C:/MASTER ADVANCED/BEREICHIT/BL" + num + "-BL.psd";
+var destinos = "C:/MASTER ADVANCED/BEREICHIT/BE" + num + "-BE.psd";
 rutaOrigen.push(origenes);
 rutaDestino.push(destinos);
 }
