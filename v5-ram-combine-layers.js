@@ -49,7 +49,7 @@ while(contador < 100) {
             docOrigen = null;
             docDestino = null;
             combinaciones.push(combinacion);
-            rutaOrigen.splice(numAlAzar, 1);
+            rutaOrigen.splice(numAlAzar, 1);//retirar
             contador++;
             if(contador === 100){
                 break;

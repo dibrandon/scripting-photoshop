@@ -13,7 +13,7 @@ rutaOrigen.push(origenes);
 rutaDestino.push(destinos);
 }
 
-while(contador < 200) {
+while(contador < 24000) {
 for (var i = 0; i < rutaDestino.length; i++) {
 var numAlAzar = Math.floor(Math.random() * rutaOrigen.length);
 while(numAlAzar === i){
@@ -52,7 +52,7 @@ if(!utilizado){
         contador++;
          
     }
-    if(contador === 200){
+    if(contador === 24000){
              break;
          }
 }
