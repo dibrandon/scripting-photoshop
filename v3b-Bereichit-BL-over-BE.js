@@ -1,6 +1,6 @@
 var rutaOrigen = [];
 var rutaDestino = [];
-var rutaCopia = "D:/MASTER ADVANCED/BEREICHIT-COMBINADOS/RUN 1";
+var rutaCopia = "C:/MASTER ADVANCED/BEREICHIT-COMBINADOS/RUN 1";
 var combinaciones = [];
 var contador = 0;
 
