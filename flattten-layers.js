@@ -1,4 +1,4 @@
-var folder = new Folder("C:\HDD R\PILAS ORIGIN MASTER ELE LAYER 2");
+var folder = new Folder("C:/HDD R/PILAS ORIGIN MASTER ELE LAYER 2");
 var fileList = folder.getFiles();
 
 for (var i = 0; i < fileList.length; i++) {
