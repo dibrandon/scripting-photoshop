@@ -1,2 +1,2 @@
 var ruta = "c/master"
-var ruta = "d/"
+var test = "C/master"
