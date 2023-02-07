@@ -1,11 +1,11 @@
 var rutaOrigen = [];
 var rutaDestino = [];
-var rutaCopia = "C:/MASTER ADVANCED/BEREICHIT-COMBINADOS/RUN 1";
+var rutaCopia = "C:/MASTER ADVANCED/combinados stage 1";
 var combinaciones = [];
 var contador = 0;
 
 //generamos los arreglos de origen y destino con elementos
-for (var i = 1; i <= 266; i++) {
+for (var i = 1; i <= 24; i++) {
     var num = ("0000" + i).slice(-4);
     var origenes = "C:/MASTER ADVANCED/A/" + num + "-A.psd";
     var destinos = "C:/MASTER ADVANCED/B/" + num + "-B.psd";
@@ -13,9 +13,10 @@ for (var i = 1; i <= 266; i++) {
     rutaDestino.push(destinos);
 }
 
-while (contador < 24000) {
+while (contador < 24) {
     for (var i = 0; i < rutaDestino.length; i++) {
         var numAlAzar = Math.floor(Math.random() * rutaOrigen.length);
+        //solo usar la seccion del while de abajo para evitar pegar indices en pilas iguales
         // while(numAlAzar === i){
         // numAlAzar = Math.floor(Math.random() * rutaOrigen.length);
         // }
@@ -52,7 +53,7 @@ while (contador < 24000) {
             contador++;
 
         }
-        if (contador === 24000) {
+        if (contador === 24) {
             break;
         }
     }
