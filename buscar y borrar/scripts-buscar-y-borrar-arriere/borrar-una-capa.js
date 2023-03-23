@@ -10,15 +10,20 @@ for (var i = 0; i < files.length; i++) {
   // Abre el archivo PSD
   var doc = app.open(files[i]);
 
-  // Busca la capa "Arrière-plan"
-  var bgLayer = doc.layers.getByName("Arrière-plan");
+  try {
+    // Busca la capa "Arrière-plan"
+    var bgLayer = doc.layers.getByName("Arrière-plan");
 
-  // Si se encuentra la capa, elimínala y guarda los cambios
-  if (bgLayer != null) {
-    bgLayer.remove();
-    doc.save();
+    // Si se encuentra la capa, elimínala y guarda los cambios
+    if (bgLayer != null) {
+      bgLayer.remove();
+      doc.save();
+    }
+  }
+  catch (e) {
+    // Si la capa no se encuentra, no hacemos nada
   }
 
-  // Si no encontro la capa, cierra el archivo sin guardar los cambios
+  // Cierra el archivo sin guardar los cambios
   doc.close(SaveOptions.DONOTSAVECHANGES);
 }
